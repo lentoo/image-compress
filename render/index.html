@@ -36,9 +36,15 @@
             background: #f0f9eb;
             border-left: 0;
             border-right: 0;
-            display: flex;            
+            display: flex;
         }
         .item-size {
+            flex: 0 0 50px;
+            text-align: center;
+            color: #999;
+            border-left: 1px solid #67c23a;
+        }
+        .item-compress-size {
             flex: 0 0 50px;
             text-align: center;
             border-left: 1px solid #67c23a;
@@ -47,12 +53,13 @@
             flex: 1;
             overflow: hidden;
             text-overflow: ellipsis;
+            color: #666;
         }
         .items-container {
             display: none;
         }
         .items { 
-            margin-top: 5px;
+            /* margin-top: 5px; */
         }
         .item-title {
             text-align: center;
@@ -71,7 +78,7 @@
             <p style="color: #f5f5f5;">将图片拖到此处，支持批量拖拽</p>
         </div>
         <div id="items-container" class="items-container">
-            <p class="item-title">文件名</p>
+            <!-- <p class="item-title">文件名</p> -->
             <ul id="items" class="items">
                 <!-- <li class="item">
                     <p class="item-content">123</p>
