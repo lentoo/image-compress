@@ -1,0 +1,56 @@
+{
+  "name": "picture-compress",
+  "version": "1.0.1",
+  "description": "",
+  "main": "lib/main.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "main": "electron ./lib/main",
+    "pack:mac": "electron-builder --mac",
+    "pack:win": "electron-builder --win",
+    "pack:linux": "electron-builder --linux"
+  },
+  "keywords": [],
+  "author": {
+    "name": "lentoo",
+    "email": "729533020@qq.com"
+  },
+  "license": "ISC",
+  "build": {
+    "appId": "com.lentoo.image-compress",
+    "productName": "图片压缩小工具",
+    "copyright": "Copyright © 2010 ${author}",
+    "asar": false,
+    "files": [
+      "render/**/*",
+      "lib/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "target": "dmg",
+      "icon": "icons/logo.icns",
+      "darkModeSupport": false
+    },
+    "win": {
+      "target": "zip",
+      "icon": "icons/logo.ico"
+    },
+    "linux": {
+      "category": "Development",
+      "target": "tar.gz",
+      "icon": "icons/"
+    }
+  },
+  "dependencies": {
+    "byte-size": "^6.2.0",
+    "imagemin": "^7.0.1",
+    "imagemin-jpegtran": "^6.0.0",
+    "imagemin-pngquant": "^8.0.0"
+  },
+  "devDependencies": {
+
+    "commander": "^5.0.0",
+    "electron": "^8.1.1",
+    "electron-builder": "^22.4.1"
+  }
+}

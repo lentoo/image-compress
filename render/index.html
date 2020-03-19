@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片压缩小工具</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, .3);
+        }
+        .container {
+            height: 100%;
+            width: 100%;
+        }
+        .drop-tip {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #666;
+            height: 100vh;
+            /* display: none; */
+        }
+        .item {
+            padding: 2px 10px;
+            font-size: 12px;
+            color: #67c23a;
+            border: 1px solid #67c23a;
+            background: #f0f9eb;
+            border-left: 0;
+            border-right: 0;
+            display: flex;            
+        }
+        .item-size {
+            flex: 0 0 50px;
+            text-align: center;
+            border-left: 1px solid #67c23a;
+        }
+        .item-content {
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .items-container {
+            display: none;
+        }
+        .items { 
+            margin-top: 5px;
+        }
+        .item-title {
+            text-align: center;
+            padding-top: 10px;
+            color: #f5f5f5;
+        }
+        .svg {
+            fill: #fff !important;
+        }
+    </style>
+</head>
+<body>
+    <div draggable id="container" class="container">
+        <div id="drop-tip" class="drop-tip">
+            <svg t="1584518673889" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="579" width="45" height="45"><path d="M244.591671 429.694459c53.040007 0 96.190783-43.150776 96.190783-96.190783s-43.150776-96.190783-96.190783-96.190783-96.190783 43.150776-96.190783 96.190783S191.551664 429.694459 244.591671 429.694459zM244.591671 268.01208c36.112476 0 65.491597 29.379121 65.491597 65.491597s-29.379121 65.491597-65.491597 65.491597-65.491597-29.379121-65.491597-65.491597S208.479195 268.01208 244.591671 268.01208z" p-id="580" fill="#e6e6e6"></path><path d="M691.77648 501.056764 691.77648 125.959783l-622.170169 0 0 771.385609 622.170169 0L691.77648 503.06142l1.003863-0.934279C692.444698 501.766938 692.111101 501.414921 691.77648 501.056764zM661.077294 156.658969l0 314.411853c-52.281737-46.12348-100.765985-62.97017-144.507208-50.083675-79.322603 23.37129-115.65509 138.382721-127.746476 187.54542-76.556607-46.665833-143.853315-58.9496-200.271256-36.501332-41.739637 16.609283-69.89079 49.2681-88.245833 80.201623L100.30652 156.658969 661.077294 156.658969zM100.305497 866.646206 100.305497 730.905662c2.970658-11.541871 28.383444-102.121865 99.742678-130.408095 51.017954-20.222577 115.118877-4.882194 190.524265 45.590338l19.527752 13.07069 4.121877-23.133883c0.072655-0.409322 7.522324-41.548278 25.703405-85.543282 16.07921-38.910195 43.934628-87.852884 85.320201-100.0466 38.129412-11.232832 83.786265 9.954723 135.831618 62.957891l0 353.253486L100.305497 866.646206z" p-id="581" fill="#e6e6e6"></path><path d="M765.453503 158.612461l188.288341 0 0 30.699186-188.288341 0 0-30.699186Z" p-id="582" fill="#e6e6e6"></path><path d="M765.453503 383.739824l188.288341 0 0 30.699186-188.288341 0 0-30.699186Z" p-id="583" fill="#e6e6e6"></path><path d="M765.453503 608.867188l188.288341 0 0 30.699186-188.288341 0 0-30.699186Z" p-id="584" fill="#e6e6e6"></path><path d="M765.453503 833.994552l188.288341 0 0 30.699186-188.288341 0 0-30.699186Z" p-id="585" fill="#e6e6e6"></path></svg>
+            <p style="color: #f5f5f5;">将图片拖到此处，支持批量拖拽</p>
+        </div>
+        <div id="items-container" class="items-container">
+            <p class="item-title">文件名</p>
+            <ul id="items" class="items">
+                <!-- <li class="item">
+                    <p class="item-content">123</p>
+                    <p class="item-size">6.3kb</p>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+    <script>
+        require('./index.js')
+    </script>
+</body>
+</html>
